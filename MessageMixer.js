@@ -1,5 +1,29 @@
 
-function countCharacter(inputString, inputCharacter) {
+
+
+
+
+
+
+
+
+// Message Mixer Object
+let MessageMixer = {
+
+     
+
+};
+
+
+
+
+
+
+
+
+
+
+  let countCharacter = (inputString, inputCharacter) => {
     let count = 0;
     let string = inputString.toLowerCase();
     let character = inputCharacter.toLowerCase();
@@ -13,8 +37,17 @@ function countCharacter(inputString, inputCharacter) {
   
   
   
+
+
+
+
+
+
+
+
+
   
-  function capitalizeFirstCharacterOfWords(string) {
+  let capitalizeFirstCharacterOfWords = (string) => {
     let arr = string.split(" ");  
       for (let i = 0; i < arr.length; i++) {  
         let word = arr[i];
@@ -27,12 +60,28 @@ function countCharacter(inputString, inputCharacter) {
   
   
   
+
+
+
+
+
+
+
+
   
-  function reverseWord(word) {
+  let reverseWord = (word) => {
     return word.split("").reverse().join("");
   };
   
-  function reverseAllWords(sentence) {
+
+
+
+
+
+
+
+
+  let reverseAllWords = (sentence) => {
     let words = sentence.split(" ");
       for (let i = 0; i < words.length; i++) {
         words[i] = reverseWord(words[i]);
@@ -43,24 +92,42 @@ function countCharacter(inputString, inputCharacter) {
   
   
   
+
+
+
+
+
   
-  function replaceFirstOccurence(string, toBeReplaced, replaceWith) {
+  let replaceFirstOccurence = (string, toBeReplaced, replaceWith) => {
     return string.replace(toBeReplaced, replaceWith);
   };
   
   
   
   
+
+
+
+
+
+
   
   
-  function replaceAllOccurrences(string, toBeReplaced, replaceWith) {
+  let replaceAllOccurrences = (string, toBeReplaced, replaceWith) => {
     return string.split(toBeReplaced).join(replaceWith);
   };
   
+
+
+
+
+
+
+
   
   
   
-  function encode(string) {
+  let encode = (string) => {
     let replacementObject = { "a": "@", "s": "$", "i": "!", "o":"0" };
       for (let key in replacementObject) {
         string = replaceAllOccurrences(string, key, replacementObject[key]); 
@@ -68,17 +135,50 @@ function countCharacter(inputString, inputCharacter) {
       return string;
   };
   
-  
-  
-  
-  
-  function displayMessage() {
-    console.log(countCharacter("What is the color of the sky?", "t"));
-    console.log(capitalizeFirstCharacterOfWords("What is the color of the sky?"));
-    console.log(reverseWord("What is the color of the sky?"));
-    console.log(reverseAllWords("What is the color of the sky?"));
-    console.log(replaceFirstOccurence("What is the color of the sky?", "sky", "water"));
-    console.log(encode("What is the color of the sky?"));
+
+
+
+
+
+
+
+
+
+  let palindrome = (str) => {
+    return `${str}  ${reverseWord(str)}`; 
   }
+
+
+
+
+
+
+
+let pigLatin = (sentence, character) => {
+  return sentence.split(' ').join(character + '');
+}
+
+
+
+
+
+
+
+
+
   
-  displayMessage();
+  
+  
+  
+export default MessageMixer;
+
+
+export {countCharacter}
+export {capitalizeFirstCharacterOfWords}
+export {reverseWord}
+export {reverseAllWords}
+export {replaceFirstOccurence}
+export {replaceAllOccurrences}
+export {encode}
+export {palindrome}
+export {pigLatin}
